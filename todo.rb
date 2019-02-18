@@ -1,6 +1,11 @@
 class List
+  attr_reader :all_tasks
   def initialize
     @all_tasks = []
+  end
+
+  def add(task)
+    @all_tasks << task
   end
 end
 
@@ -12,7 +17,9 @@ class Task
   end
 end
 
-if _FILE_ == $PROGRAM_NAME
+if __FILE__ == $PROGRAM_NAME
   my_list = List.new
   puts 'You have created a new list'
+  my_list.add(Task.new('Make Breakfast'))
+  puts 'You have added a task to the Todo list'
 end
